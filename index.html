@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude AI: Instructional Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 40px rgba(0,0,0,0.3);
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid #667eea;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #2d3561;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            border-bottom: 3px solid #fff;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #1a1a2e;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        section h3 {
+            color: #2d3561;
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section h4 {
+            color: #667eea;
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .intro-card h4 {
+            margin-top: 0;
+            color: #1a1a2e;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .team-member h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+        }
+
+        .tips-list {
+            background: #fff8e1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffa726;
+            margin: 1rem 0;
+        }
+
+        .troubleshooting-box {
+            background: #e3f2fd;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #42a5f5;
+            margin: 1rem 0;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .citation {
+            margin-left: 2rem;
+            padding: 1rem;
+            background: #f5f5f5;
+            border-left: 3px solid #667eea;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Claude AI</h1>
+            <p>A Comprehensive Instructional Guide</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#audience">Audience Analysis</a></li>
+                <li><a href="#literature">Literature Review</a></li>
+                <li><a href="#instructions">Instructions</a></li>
+                <li><a href="#team">Meet the Team</a></li>
+                <li><a href="#references">References</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="introduction">
+                <h2>Gen AI Tool Introduction</h2>
+                
+                <div class="intro-grid">
+                    <div class="intro-card">
+                        <h4>Name</h4>
+                        <p>Claude is an artificial intelligence assistant developed by Anthropic.</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>Purpose</h4>
+                        <p>Claude is designed to be a helpful, honest, and harmless AI assistant capable of conversing, answering questions, writing, coding, analyzing documents and images, and assisting with a wide variety of tasks.</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>Platforms</h4>
+                        <p>Claude is accessible through a web-based interface at claude.ai, mobile apps for iOS and Android, API integration for developers, and Claude Code—a command-line tool for software developers.</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>Key Features</h4>
+                        <p>Claude excels in natural conversation, writing assistance, code generation and debugging, document analysis, image interpretation, and creative content generation, all while maintaining strong safety and ethical guidelines through Constitutional AI training.</p>
+                    </div>
+                </div>
+
+                <h3>Background and History</h3>
+                <p>Anthropic was founded in 2021 by seven former OpenAI employees, including siblings Daniela Amodei and Dario Amodei, who serve as president and CEO respectively. The company emerged from concerns about AI safety and the need for more transparent and ethically-aligned AI systems. Anthropic introduced Constitutional AI in late 2022, a training method that would become its signature approach, where models critique and revise their own answers using a "constitution" of principles including human rights and safety rules.</p>
+
+                <p>Claude was launched publicly in March 2023, positioned as a "helpful, honest, and harmless" assistant, and was named after Claude E. Shannon, referred to as the "father of information theory". The initial release included two versions: Claude and Claude Instant, with the latter being faster and more cost-effective. Claude 2 followed in July 2023, bringing broader public access on claude.ai and improved coding, math, and reasoning capabilities. The Claude 3 family was released in March 2024, introducing three models—Haiku, Sonnet, and Opus—each balancing different priorities of speed, capability, and complexity. Claude 3.5 Sonnet, released in June 2024, represented a significant milestone, outperforming even Claude 3 Opus on several coding and reasoning benchmarks while running faster and cheaper. The Claude 4 family launched in May 2025, with continued emphasis on safety through Constitutional AI while expanding capabilities for real-world applications.</p>
+            </section>
+
+            <section id="audience">
+                <h2>Audience Analysis</h2>
+                <p>The target audience for this instructional guide consists of university students across various academic disciplines and technical skill levels who are exploring generative AI tools for academic, creative, or professional purposes. This diverse audience includes students who may range from complete beginners with no prior AI experience to intermediate users who have experimented with other generative AI platforms like ChatGPT or Google's Gemini.</p>
+
+                <p>One primary consideration is the varying levels of technical expertise within this audience. Some students may be computer science or engineering majors comfortable with technical terminology, command-line interfaces, and software installation processes, while others may be humanities or social science students who primarily need Claude for writing assistance, research, or creative projects. This disparity creates a need for instructions that are accessible to non-technical users while still providing sufficient depth for those pursuing more advanced applications like Claude Code for software development.</p>
+
+                <p>Students often face time constraints due to heavy academic workloads, making clear, concise instructions essential. They need to understand not just how to use Claude, but when it's appropriate to use it and what its limitations are, particularly given academic integrity concerns around AI-generated content. Many students will be navigating institutional policies about AI use that vary widely across universities and even between individual professors within the same institution.</p>
+
+                <p>Another significant challenge this audience faces is the ethical dimension of AI usage. Students are increasingly aware of concerns about AI-generated misinformation, bias in AI outputs, and the environmental impact of large language models. They want to use these tools responsibly and need guidance on how to critically evaluate AI-generated content rather than accepting it uncritically. The literature review section of this guide addresses these concerns by discussing hallucinations in AI outputs and the ethical framework behind Claude's Constitutional AI training.</p>
+
+                <p>Financial considerations also matter to this demographic. Most students operate on limited budgets and need to understand the differences between Claude's free, Pro, and Max subscription tiers to make informed decisions about whether paid features are necessary for their use cases. They need practical guidance on maximizing the free tier's capabilities before committing to a paid subscription.</p>
+
+                <p>Technical troubleshooting represents another potential obstacle. Students may be working on various devices—personal laptops, library computers, or mobile devices—with different operating systems and varying levels of performance. They need straightforward solutions for common problems like slow response times, browser compatibility issues, or unclear outputs from the AI.</p>
+
+                <p>This audience also expects modern, user-friendly interfaces and may become frustrated with overly technical jargon or unnecessarily complicated setup processes. They value efficiency and practicality, wanting to quickly understand how Claude can help them accomplish specific tasks—whether that's drafting an essay, debugging code, analyzing data, or brainstorming research questions. The instructions must therefore balance comprehensiveness with accessibility, providing step-by-step guidance while respecting the audience's intelligence and diverse technical backgrounds.</p>
+            </section>
+
+            <section id="literature">
+                <h2>Literature Review</h2>
+                
+                <p>Since the advent of generative artificial intelligence it has come a long way in producing results that are viable for a final product. Despite these advancements, two main issues remain: hallucinations and ethics. This review will focus on these two topics in relation to Claude, a generative AI model developed by Anthropic that is used primarily for programming in several languages.</p>
+
+                <p>Most generative AI models are large language models (LLMs) meaning that they take in large amounts of training data and use that to recognize patterns in text which informs their output. Sometimes this output can include misleading or entirely fabricated information, this is commonly called a hallucination. Feuerriegel (2023) describes several of the limitations that cause it in his article about generative AI. For one, LLMs "provide the most probable response to a prompt, not necessarily the correct response," (Feuerriegel, p.117). If the data used for training is incorrect or biased the model may believe the response it gives to be the most likely. Noticeable examples of hallucinations appear in the output of early image generation models, where it was common for the hands of any human subjects to be bizarre or not make anatomical sense. This issue was so prevalent that the main way to identify whether or not an image was real was to observe the hands of any humans. The issue with hallucinations in generated text from LLMs though, also outlined by Feuerriegel (2023), is that the output is "semantically or syntactically plausible" (p. 117) meaning that any mistakes don't stick out as much as a hand with seven fingers would. Because of this, there is no way to verify the information presented other than fact checking it yourself. In cases like Google's AI overview on searches, this may completely negate the point of prompting the AI at all. Although in relation to Claude, an essential part of programming called debugging already accounts for any issues that may be produced in the output. Many times even humans produce errors in the code they create that then have to be corrected and applying this practice to outputs from Claude can catch errors before they can cause issues. With Claude doing the grunt work and an experienced programmer watching over it, the issue of hallucinations is mostly corrected for.</p>
+
+                <p>Another issue to consider with the use of generative AI is that of ethics. There are several ethical issues associated with genAI models. A 2023 paper by Huang et al. overviewing AI ethics outlines several of these issues in section III, which offers categorizations based on existing literature then proposes a new categorization splitting things into the individual, societal, and environmental levels. At the individual level, there are several risks to privacy and data protection due to LLMs' need for massive amounts of training data to function which are not always sourced through proper channels and could include personal data. At the societal level there are issues such as copyright infringement due to data collection practices; bias that can be exhibited in the outputs due to bias in the data; and the "black box" (Huang et al. p.) nature of LLMs where it is hard to tell the source of an incorrect input due to the complexity of the system. On the environmental level there are concerns for energy usage and pollution due to the process of training an LLM being energy intensive. For Claude specifically, a 2025 article doing a general review of several LLMs and their use cases highlighted its emphasis on safety and ethics. Its training data consists of "open-source code, documentation, and books" (Jabbar et al. p.168) and Anthropic maintains a page on their site that gives a transparency overview for each model. Ethics and responsibility seem to be very important in the development of Claude, and while Jabbar et al. (2025) later state that it does have some impact on the model's metacognition (its understanding of its own "thought" process, which could be useful in clarifying confusing outputs), it remains strong in several other areas. All this taken together makes Claude a very good choice for those concerned with ethics in the use of LLMs to assist in their work.</p>
+
+                <p>These sources show that while some issues still persist, generative AI has reached a point where it can somewhat reliably be used to assist (but not fully replace) human work. With Claude specifically, the work produced is mostly usable and any issues that may crop up can be corrected easily by a developer with a reasonable level of experience with the programming language used. While anything really important should be done by a human and all work done by Claude should be reviewed, it can be used for smaller menial tasks.</p>
+            </section>
+
+            <section id="instructions">
+                <h2>Instructions</h2>
+
+                <h3>System Requirements</h3>
+                <div class="feature-box">
+                    <h4>Basic Claude AI</h4>
+                    <p>The basic Claude AI is incredibly easy to use compared to Claude Code. Claude AI simply requires:</p>
+                    <ul>
+                        <li>A web browser</li>
+                        <li>An Anthropic account</li>
+                        <li>Internet connection</li>
+                    </ul>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Claude Code</h4>
+                    <p><strong>Operating Systems:</strong></p>
+                    <ul>
+                        <li>macOS 10.15+</li>
+                        <li>Ubuntu 20.04+ / Debian 10+</li>
+                        <li>Windows 10+</li>
+                    </ul>
+                    
+                    <p><strong>Hardware Requirements:</strong></p>
+                    <ul>
+                        <li>4 GB+ of RAM (RAM is the most impactful system requirement in terms of processing power)</li>
+                        <li>1 GB available storage</li>
+                    </ul>
+                    
+                    <div style="text-align: center; margin: 1.5rem 0;">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAY1BMVEVXV1dKSkpQUFBUVFRMTExGRkZCQkI/Pz88PDw5OTlNTU1JSUlcXFxgYGBkZGRoaGhra2tubm5xcXF1dXV5eXl9fX2BgYGFhYWJiYmNjY2RkZGVlZWZmZmdnZ2hoaGlpaWpqan///8AAAACYklEQVR4nO3d23KDIBRA0XCC0VjvMdb//89GZ9I0bQxCkJyzXe/gdmAcRBAREREREREREREREREREREREZFbqm3btFX8M5u2zbr4Z9ZtG/XMpu3in9m0bRv/zKZt45/ZtG38M5u2jX9m07bxz2zaNv6ZTdvGP7Np2/hnNm0b/8ymbeOf2bRt/DObtm1T1nUVP/N13zRV/MxnvWmq+Jm39bap4mf+1Num+vtnvuyfuf6Z0xzCL/8znPCRQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBmOYRZDmGWQ5jlEGY5hFkOYZZDmOUQZjmEWQ5hlkOY5RBm/QFdcBxRPk3jWQAAAABJRU5ErkJggg==" alt="RAM chip" style="max-width: 200px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">RAM is crucial for processing power</p>
+                    </div>
+                    
+                    <p><strong>Network Requirements:</strong></p>
+                    <ul>
+                        <li>Stable internet connection for authentication and AI processing</li>
+                    </ul>
+                    
+                    <p><strong>Software Requirements:</strong></p>
+                    <ul>
+                        <li>Node.js 18+ (for installation and JavaScript execution)</li>
+                    </ul>
+                    
+                    <p><strong>Location:</strong></p>
+                    <ul>
+                        <li>Anthropic supported regions/countries</li>
+                    </ul>
+                    
+                    <p>Overall, Claude AI Code system requirements are not overly demanding and easy to achieve as it is for basic use. However, there are more optional system requirements that will be explored further in the tips for optimal use section.</p>
+                </div>
+
+                <h3>Setup and Installation</h3>
+                
+                <h4>Standard Installation for Claude Code</h4>
+                <p>To install Claude Code, use one of the following methods based on your operating system:</p>
+                
+                <div class="feature-box">
+                    <p><strong>Homebrew (macOS, Linux):</strong></p>
+                    <pre style="background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 5px; overflow-x: auto;"><code>brew install --cask claude-code</code></pre>
+                </div>
+                
+                <div class="feature-box">
+                    <p><strong>macOS, Linux, WSL:</strong></p>
+                    <pre style="background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 5px; overflow-x: auto;"><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+                </div>
+                
+                <div class="feature-box">
+                    <p><strong>Windows PowerShell:</strong></p>
+                    <pre style="background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 5px; overflow-x: auto;"><code>irm https://claude.ai/install.ps1 | iex</code></pre>
+                </div>
+                
+                <div class="feature-box">
+                    <p><strong>Windows CMD:</strong></p>
+                    <pre style="background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 5px; overflow-x: auto;"><code>curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd</code></pre>
+                </div>
+                
+                <h4>Next Steps After Installation</h4>
+                <div class="intro-grid" style="margin-top: 1.5rem;">
+                    <div class="intro-card">
+                        <h4>🚀 Quickstart</h4>
+                        <p>See Claude Code in action with practical examples</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>🎓 Common Workflows</h4>
+                        <p>Step-by-step guides for common workflows</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>🔧 Troubleshooting</h4>
+                        <p>Solutions for common issues with Claude Code</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>💻 IDE Setup</h4>
+                        <p>Add Claude Code to your IDE</p>
+                    </div>
+                </div>
+                
+                <h4>Additional Resources</h4>
+                <div class="intro-grid" style="margin-top: 1.5rem;">
+                    <div class="intro-card">
+                        <h4>🔌 Build with the Agent SDK</h4>
+                        <p>Create custom AI agents with the Claude Agent SDK</p>
+                    </div>
+                    
+                    <div class="intro-card">
+                        <h4>☁️ Host on AWS or GCP</h4>
+                        <p>Configure Claude Code with Amazon Bedrock or Google Vertex AI</p>
+                    </div>
+                </div>
+                
+                <h4>Setting up Basic Claude AI</h4>
+                <p><strong>To set up Claude AI:</strong></p>
+                <ol>
+                    <li>Navigate to claude.ai in your web browser</li>
+                    <li>Continue with Google or create the account using your email</li>
+                    <li>Select your Claude AI plan depending on what you need</li>
+                </ol>
+
+                <h3>Main Features/Functionalities</h3>
+                <p>Claude has many features and functionalities that make it incredibly useful. It is important to know them in order to make full use of Claude AI.</p>
+
+                <div class="feature-box">
+                    <h4>Conversation & Reasoning</h4>
+                    <p>Claude is capable of conversing, answering questions, reasoning, and brainstorming.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Writing & Editing</h4>
+                    <p>Claude is strong when used in a variety of writing and paper revision/review. Whether one needs shortening, changes in wording, grammatical checks, or even poems and stories, Claude is capable of generating very useful feedback.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Data Analysis</h4>
+                    <p>Claude can generate feedback on images, spreadsheets, and charts, as well as produce them.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Coding & Software Development</h4>
+                    <p>Claude AI has a strong presence in coding and software development. Whether it is producing code, websites, apps, or proofreading and debugging, Claude is well-known for its strength in code-related concerns. Claude Code is capable of being used inside of the apps or code for software and AI interaction. Many app and software developers will find Claude Code to be more specialized than the normal Claude AI.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Privacy & Safety</h4>
+                    <p>The last differentiating feature Claude AI is known for is privacy and safety. There are strong safety measures on training from personal data in chats. Claude's safety makes it a popular option even for businesses or more sensitive uses.</p>
+                </div>
+
+                <p><strong>Important Note:</strong> Overall, Claude is a versatile tool that is capable of answering pretty much any question you can think of asking it. However, one should use AI outputs with care and caution.</p>
+
+                <h3>Tips for Optimal Use</h3>
+                <div class="tips-list">
+                    <p><strong>Provide Context:</strong> Context is just as important with Claude as it is in a conversation with a person. Therefore, provide sufficient context and specific wants and needs in order to avoid misunderstandings. This can be achieved through file uploads of documents or spreadsheets and clear, concise instructions.</p>
+                    
+                    <p><strong>Break Down Large Tasks:</strong> If it is a large task, it helps to break it into multiple parts for Claude AI to work through with less error.</p>
+                    
+                    <p><strong>System Optimization:</strong> A few system requirements that assist in optimal use are:</p>
+                    <ul>
+                        <li>Upgrading RAM GB</li>
+                        <li>Upgrading SSD GB</li>
+                        <li>Using internet browsers: Chrome, Firefox, or Edge</li>
+                    </ul>
+                    
+                    <p><strong>Choose the Right Plan:</strong></p>
+                    
+                    <div style="text-align: center; margin: 1.5rem 0;">
+                        <img src="data:image/png;base64,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1p3f/3dB/98H/+93/v//Wv+/k/+fO//9/+/y//9u/3/g/38G/P9f///v/P+3+v+79F/8//8r/P/u/f/A///f4f/f7b//W/3/q+X/L/f/u+j/n/+/+xf//939/8H/P/j/7f//u+n/+1X/f/j/3/X/f0P+f7f/f+H///b/b/f/r/r/9//+v/X/b/n/7e//p//f/xX+/7v/f+D//9X+f+n/d5f//+3+/z9t/v+d/v+39/97/f9C/y/m/w///xv//y7//xv+/7vL//8u//++4f+v/v9D///V///g/z/7/3ff/+/i/18Y/g/+f/f4/932/3b7/+/M/y/8/+ry/w/+f+f//9sP//9c/v9N/f9b/v/C//+u//97+v9r+P+/zf/v6v8/+v+j/5+b/+/U/+/e/x/8/+/4///u8/+7+v8L///b//8C//9a/v/u///1+//d+/+t/n/q//e//+9p/x/8/+ry//3R/+H/d/f/f53+/7vn/+/u/++S/1/v/z/6/90X/v/u+//o/wvx/x/+/+p//w/+//L/e/P/V///y9//19+/4X/nf+3/++r//8vz/1v8//f2/7+9/5+r/v8f/X+u/r+j/89dv///x//fXf5/pf///f5/1/3/t/v/H///w/9f/f//i/5/H/z/hfz/5v9/7/n/u/r/H/v//b/1/zv1/73u/wv1//8f/P9e+f9x/78PfvD//zb/f/T/u/7/t/r/BP+f//9v7P93+f+7rv//O/L/f/v/h//f9f///yz//wv4v/r/g//PU/9/3/3/Qfv/mv9/+P8J/f/b/f9++f9d/v+3+/+T+///7P/zsv//Vvt/Hv//Dv//Lvz/+f//+/3/wf/vov/fP/+/df//+/8f/f/u/P/h///a/7+1///7/f+i/+83//9//v9n+P/P/m///c////+3/n93+v/3zf8f/H/u//+/z/+/u/5/8P+/1v/fv/j/u+v/d97/f8v/+13+/2///91+/v8H//9B//8a///D/7/T/3/w/7vy/78//v9H/5+b/v8f/t///x/+///u//+h///3+v+F+n+v//+E/9+l/x/+/73+///f/r/A/4H/v8b//Ub/38v+/+8M+v/2/3/f9f9+/Tz+f/T/v+z/p/v/H/z/G/n/LP5/8P9b/v8V/v+3/f/B//+u/u8b+P/c7P937/9v4/93u//f6Pd/8P+7+f9bwf9/w/9fgfn/DP6/3/z/wf//7v9/8P+39P+7w/9/+P+///9f7v939v/77v//wf9v6v8P///r/P//9//fgP/f5f/f/+8/8H+7+P/v/v/f3v8f+P9/t/9/8P/7+P/v/v/v+v/f5/8P/v9n//+/u/8P/v9///9b/P+w///t/z/w/7vm/z/5/3/o/3/0///2//8H//+P//+3/f+1/P83+f/c8P//+P/v+P+h/9/N/x/8/+/9//+m////gf/fwP/3u///5//fMPz/U///7/v/2/Pf/0f/v3/+fwP//3//f9/V//8f//+C/4P//+73///D//+o/z/4/xv8//4W/zf9/0T/f+H/v/u//wf/f/v/X9/1/wfx//u7/H+/6/8H/v//f/8Xmv/f1f+/0P9/0P//9wv9D/v/h/v/0f/v4v9/7P9v5f93+///u/7/wf/v5v8//v/a/3+X/h/9f+7//+j/f+r/cP///xf8//8S///b/v9t/v+e+//b/P/f7/9/j/+/MP9/m///8////y///wv+f7f//wf+f/f//wf+//r9//7//39b//+V//+n///e/v+//P//h/9/gv8vwP9v+/8v9v9v+P+h/99F//+//v/Xwv//m/r/f/f/X/v/C/H//wb/f9v//x/+/9/8//vef/9/8f/f1f/fe/wPe/P/3eP/4P9vv/9f8P+/5v8P/H+B/v/y/3+l/z/4/3/0/79t/L/v/5///9f9/77x/5f//77//3/5//+u//+x//97/v9f8P97//+7+/9e/v93//9f//8L8P/f5f//u/v/H/3/1/j/ffT/3/L/w/+/u/7/f9f//5H///v+/6H//5L//8r//1//f/8X/P8Q+xeLzOLL9Rt/8vV/uUH34y+UaVsAAAAASUVORK5CYII=" alt="Claude pricing tiers" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    </div>
+                    
+                    <ul>
+                        <li><strong>Free ($0/month):</strong> 
+                            <ul>
+                                <li>Chat with Claude on web, iOS, and Android</li>
+                                <li>Write, edit, and create content</li>
+                                <li>Summarize and analyze data</li>
+                                <li>Generate code and visualize data</li>
+                                <li>Chat directly with recently used files</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pro ($17/month):</strong> 
+                            <ul>
+                                <li>Everything in Free Plus+</li>
+                                <li>5x more usage than Free</li>
+                                <li>Unlimited Research Credits</li>
+                                <li>Upload & analyze more files (graphs/charts)</li>
+                                <li>Use extended thinking</li>
+                                <li>Generate images from scratch (code, campaigns)</li>
+                                <li>Access Research mode</li>
+                                <li>Priority access during high traffic</li>
+                                <li>Access to Code (coming soon)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Max (From $100):</strong> 
+                            <ul>
+                                <li>Everything in Pro plus usage tiers for</li>
+                                <li>Claude for 20+ hours of daily use</li>
+                                <li>Extra access to advanced Claude features</li>
+                                <li>Priority at high usage times</li>
+                                <li>Dedicated Code for on-device AI</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <p style="margin-top: 1rem;"><strong>Choose based on your needs:</strong> Free tier is suitable when Claude is being used as a supplement and its answer does not have heavy implications. Pro is ideal if you need to use Claude often for important jobs and desire the extra features/functionalities. Max is for vast usage and the additional features listed.</p>
+                </div>
+
+                <h3>Troubleshooting</h3>
+                <div class="troubleshooting-box">
+                    <p><strong>Common Solutions:</strong></p>
+                    <ul>
+                        <li>Repeat instructions if Claude misunderstands</li>
+                        <li>Cut information into smaller chunks</li>
+                        <li>Provide the error message displayed to Claude for better assistance</li>
+                        <li>Upgrade your system if outputs are consistently slow</li>
+                        <li>Restart the browser or device</li>
+                        <li>Close extra tabs</li>
+                        <li>Clear browser cache</li>
+                        <li>Disable browser extensions</li>
+                        <li>Switch to a different browser (Chrome, Firefox, or Edge recommended)</li>
+                    </ul>
+                    
+                    <p><strong>Remember:</strong> With this wide variety of solutions, the problem is likely to be fixed using the appropriate method. Claude AI is not perfect, so as the user be thoughtful and guide it with care.</p>
+                </div>
+            </section>
+
+            <section id="team">
+                <h2>Meet the Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <h3>Zachary Sofer</h3>
+                        <p><strong>Role:</strong> Spokesman/Representative</p>
+                        <p><strong>Major:</strong> Senior Chemical Engineering</p>
+                        <p><strong>Contributions:</strong> Wrote the instructions portion of the website</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Jeremy Hinton</h3>
+                        <p><strong>Role:</strong> Website Creator</p>
+                        <p><strong>Major:</strong> Senior Mechanical Engineering</p>
+                        <p><strong>Contributions:</strong> Worked on the instructions, wrote the audience analysis, put everything into the website</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <h3>Parker Conway</h3>
+                        <p><strong>Role:</strong> Collector/Editor/Submitter</p>
+                        <p><strong>Major:</strong> Sophomore Engineering</p>
+                        <p><strong>Contributions:</strong> Gathered sources and wrote the literature review</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="references">
+                <h2>Works Cited</h2>
+                
+                <div class="citation">
+                    <p>Feuerriegel, Stefan, et al. "Generative AI." <em>Business & Information Systems Engineering</em>, vol. 66, no. 1, 12 Sept. 2023, pp. 111-126, https://doi.org/10.1007/s12599-023-00834-7.</p>
+                </div>
+                
+                <div class="citation">
+                    <p>Huang, Changwu, et al. "An overview of Artificial Intelligence Ethics." <em>IEEE Transactions on Artificial Intelligence</em>, vol. 4, no. 4, Aug. 2023, pp. 799-819, https://doi.org/10.1109/tai.2022.3194503.</p>
+                </div>
+                
+                <div class="citation">
+                    <p>Jabbar, Abdul, et al. "A comparative review of LLM-based Conversational Systems: Insights from DeepSeek, CHATGPT, Gemini, claude, and copilot." <em>IET Conference Proceedings</em>, vol. 2025, no. 22, Oct. 2025, pp. 167-173, https://doi.org/10.1049/icp.2025.2980.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Claude AI Instructional Guide | Created for Educational Purposes</p>
+        </footer>
+    </div>
+</body>
+</html>
